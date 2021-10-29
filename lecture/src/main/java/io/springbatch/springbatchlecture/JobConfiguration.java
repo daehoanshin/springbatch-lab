@@ -22,7 +22,7 @@ public class JobConfiguration {
 
     @Bean
     public Job batchJob1() {
-        return jobBuilderFactory.get("batchJob")
+        return jobBuilderFactory.get("batchJob1")
                 .incrementer(new RunIdIncrementer())
                 .start(step1())
                 .next(step2())
