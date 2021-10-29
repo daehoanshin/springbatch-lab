@@ -13,13 +13,13 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Date;
 
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 public class JobExecutionConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final JobExecutionListener jobExecutionListener;
-    @Bean
+//    @Bean
     public Job batchJob() {
         return jobBuilderFactory.get("batchJob")
                 .start(step1())
@@ -28,7 +28,7 @@ public class JobExecutionConfiguration {
                 .build();
     }
 
-    @Bean
+//    @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
                 .tasklet(new Tasklet() {
@@ -68,7 +68,7 @@ public class JobExecutionConfiguration {
                 .build();
     }
 
-    @Bean
+//    @Bean
     public Step step2() {
         return stepBuilderFactory.get("step2")
                 .tasklet(new CustomTasklet())
